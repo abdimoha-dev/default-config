@@ -18,17 +18,33 @@
         ],
         "config" : {
             "patientInformation": {
-                "additionalPatientInformation": {
+               "additionalPatientInformation": {
                     "title": "Additional Patient Information",
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
                         "RationCard",
                         "familyIncome",
                         "debt",
                         "cluster"
                     ]
+                },
+               "contactdetails":{
+                                "translationKey":"Contact Details",
+                                "title":"Contact Details",
+                                "attributes":["email"
+                                ],"order" : 1
+               },
+                "nextofkin":{
+                                "translationKey":"Parents Details",
+                                "title":"Next of Kin",
+                                "attributes":["fatherName","motherName","fatherPhone","motherPhone","fatherOccupation","motherOccupation","fatherEmail","motherEmail","communityLeader"
+                                ],"order" : 1
+               },
+
+                 "insuranceInformation":{
+                      "translationKey":"Insurance Information",
+                      "title":"Insurance Information",
+                      "attributes":["nhifRegistered","nhifNuber","insuranceInformation"
+                    ],"order" : 1
                 },
                 "hidden": {
                     "attributes": [
@@ -57,28 +73,14 @@
             "showLastName": true,
             "isLastNameMandatory": true,
             "showSaveConfirmDialog": false,
-            "showBirthTime": true,
+            "showBirthTime": false,
+            "showEnterID":false,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
-                {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
-                    "shortcutKey": "l"
-                },
                 {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
                     "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
                     "shortcutKey": "p"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
-                    "shortcutKey": "r"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
-                    "shortcutKey": "c"
                 }
             ],
             "conceptSetUI": {
@@ -103,14 +105,12 @@
             },
             "patientSearch": {
                 "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
+                    "label": "Location",
+                    "placeholder": "Enter Location",
                     "field": "address2"
                 },
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                   
                 }
             }
         }
