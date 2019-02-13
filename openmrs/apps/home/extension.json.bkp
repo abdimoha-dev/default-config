@@ -149,15 +149,6 @@
     "icon": "fa fa-calendar",
     "order": 14,
     "requiredPrivilege": "app:appointments"
-  },
-  "AppointmentReport": {
-    "id": "referenceapplication.legacyRunICUReportLink",
-     "extensionPointId": "org.bahmni.home.dashboard",
-     "type": "link",
-     "label": "Run Appointment Report",
-     "url": "../../openmrs/module/reporting/run/runReport.form?reportId=b68ff902-e859-40ae-b42b-a66318b1a67d",	
-     "icon": "icon-print",
-     "order": 14,
-     "requiredPrivilege": "app:appointments"
   }
+
 }

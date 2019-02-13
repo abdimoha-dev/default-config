@@ -8,6 +8,7 @@
     }
   ],
   "config": {
+    "isServiceOnAppointmentEditable": true,
     "minCharLengthToTriggerPatientSearch": 3,
     "enableSpecialities": true,
     "startOfWeek": 2,
@@ -19,7 +20,6 @@
     "printListViewTemplateUrl": "/bahmni_config/openmrs/apps/appointments/printListView.html",
     "enableServiceTypes": false,
     "enableCalendarView": true,
-    "isServiceOnAppointmentEditable": false,
     "colorsForAppointmentService": [
       "#006400",
       "#DC143C",

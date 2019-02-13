@@ -108,7 +108,7 @@
                 "conciseText": true
             },
             "Examination Notes": {
-                "conciseText": true
+                "conciseText": false
             },
             "Set1": {
                 "allowAddMore": true
