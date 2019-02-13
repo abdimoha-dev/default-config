@@ -27,6 +27,12 @@
                         "cluster"
                     ]
                 },
+                 "contactdetails":{
+                      "translationKey":"Contact Details",
+                      "title":"Contact Details",
+                      "attributes":["mobileNo","postaddres","email"
+                    ],"order" : 1
+                },
                "contactdetails":{
                                 "translationKey":"Contact Details",
                                 "title":"Contact Details",
@@ -34,9 +40,9 @@
                                 ],"order" : 1
                },
                 "nextofkin":{
-                                "translationKey":"Parents Details",
+                             	"translationKey":"Next Of Kin",
                                 "title":"Next of Kin",
-                                "attributes":["fatherName","motherName","fatherPhone","motherPhone","fatherOccupation","motherOccupation","fatherEmail","motherEmail","communityLeader"
+                                "attributes":["firstNextOfKinRelationship","firstNextOfKinName","firstNextOfKinPhone","firstNextOfKinOccupation","firstNextOfKinEmail","secondNextOfKinRelationship","secondNextOfKinName","secondNextOfKinPhone","secondNextOfKinOccupation","secondNextOfKinEmail"
                                 ],"order" : 1
                },
 
@@ -44,7 +50,7 @@
                       "translationKey":"Insurance Information",
                       "title":"Insurance Information",
                       "attributes":["nhifRegistered","nhifNuber","insuranceInformation"
-                    ],"order" : 1
+                 ],"order" : 1
                 },
                 "hidden": {
                     "attributes": [
@@ -78,9 +84,24 @@
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
+                    "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
+                    "shortcutKey": "l"
+                },
+                {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
                     "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
                     "shortcutKey": "p"
+                },
+                {
+                    "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
+                    "shortcutKey": "r"
+                },
+                {
+                    "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
+                    "shortcutKey": "c"
                 }
             ],
             "conceptSetUI": {
@@ -110,7 +131,9 @@
                     "field": "address2"
                 },
                 "customAttributes": {
-                   
+			"label": "Patient ID Card No",
+    			"placeholder": "Enter Patient ID Card No",
+    			"fields": ["patientIDCardNo"]                   
                 }
             }
         }
