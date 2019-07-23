@@ -87,18 +87,6 @@
                 "type":"programs",
                 "displayOrder":10
             },
-            "radiologyOrders":{  
-                "orderType":"Radiology Order",
-                "type":"ordersControl",
-                "translationKey":"DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
-                "displayOrder":17,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Summary"
-                    ],
-                    "numberOfVisits":4
-                }
-            },
             "labOrdersDisplayControl":{  
                 "translationKey":"DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
                 "type":"ordersControl",
@@ -202,29 +190,6 @@
                         "labConcepts":[  
 
                         ]
-                    }
-                }
-            },
-            "secondVitals":{  
-                "translationKey":"DASHBOARD_TITLE_SECOND_VITALS_KEY",
-                "type":"second vitals",
-                "isObservation":true,
-                "displayOrder":13,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Second Vitals"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
                     }
                 }
             },
