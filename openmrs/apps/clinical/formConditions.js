@@ -199,7 +199,16 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         } 
     },
-    
-    
-
+    "Current Cough" : function (formName , formFieldValues){
+        var cough = formFieldValues["Current Cough"];
+        if(cough == true){
+            return{
+                show: ["Gene , Has it Been Done?"]
+            }
+        }else {
+            return{
+                hide: ["Gene , Has it Been Done?"]
+            }
+        }    
+    },
 };
