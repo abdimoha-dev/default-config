@@ -138,15 +138,16 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }    
     },
-    "TB Screening, Person Age" : function (formName , formFieldValues){
-        var personage = formFieldValues["TB Screening, Person Age"];
-        if(personage < 15){
+    "TB Screening, Person Age" : function (formName , formFieldValues , patient){
+        if(patient.age < 15){
             return{
-                show: ["Close Contact History with TB patients"]
+                show: ["Close Contact History with TB patients"],
+                hide:["TB Screening ,Weight loss"]
             }
         }else {
             return{
-                hide: ["Close Contact History with TB patients"]
+                hide: ["Close Contact History with TB patients" , "TB Screening, Poor Weight Gain"],
+                show:["TB Screening ,Weight loss"]
             }
         }    
     },
