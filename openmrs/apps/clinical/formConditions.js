@@ -32,7 +32,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 hide: ["Lost To Follow Up Information" , "Transferred Out Information"],
                 show:["Death Information"]
             }
-        } else if( death === "Lost Follow Up(< 28 Days)"){ 
+        } else if( death === "Lost Follow Up( < 3 Months)"){ 
             return {
                 hide: ["Death Information", "Transferred Out Information"],
                 show: ["Lost To Follow Up Information"]
@@ -295,11 +295,11 @@ Bahmni.ConceptSet.FormConditions.rules = {
     "ART Follow up - Information" : function (formName , formFieldValues, patient){
         if(patient.gender === "F"){     
             return{
-                show: ["Current on FP","FP Pregnant","FP Method","EDD","PMTCT - HIV & ART Follow up"]
+                show: ["Current on FP","FP Pregnant","FP Method","EDD"]
             }
         }else {
             return{
-                hide: ["Current on FP","FP Pregnant","FP Method","EDD","PMTCT - HIV & ART Follow up"]
+                hide: ["Current on FP","FP Pregnant","FP Method","EDD"]
             }
         }    
     }, 
@@ -335,4 +335,3 @@ Bahmni.ConceptSet.FormConditions.rules = {
     }  
     
  };
-

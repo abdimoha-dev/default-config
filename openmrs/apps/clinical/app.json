@@ -45,14 +45,11 @@
                     "required" : true
                 },
                 "Co-morbidites": {
-                    "excludeFrom": ["HIV Program","HEI Program","ART Program","PMTCT Program"]
+                    "excludeFrom": ["HIV Program"]
                 },
                 "Doctor": {
                     "excludeFrom": ["TB Program"]
-                },
-                "Stage":{
-                    "excludeFrom": ["HEI Program","ART Program","PMTCT Program"]
-                } 
+                }
             },
             "patientContext": {
         		"programAttributes": [
