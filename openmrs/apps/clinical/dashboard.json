@@ -63,8 +63,7 @@
                 "showDetailsButton":true,
                 "type":"disposition",
                 "numberOfVisits":5,
-                "displayOrder":7,
-		"hideEmptyDisplayControl": true
+                "displayOrder":7
             },
             "treatments":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
