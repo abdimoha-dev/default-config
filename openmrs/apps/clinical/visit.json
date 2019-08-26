@@ -8,6 +8,11 @@
             "logo": "../images/bahmniLogo.png"
         },
         "defaultSections": true,
+        "printing" : {
+                "title" : "CURE KENYA",
+                "header" : "Patient Visit Summary",
+                "logo" : "../images/bahmniLogoFull.png"
+        },
         "sections": {
             "pivotTable":{
                 "type": "pivotTable",

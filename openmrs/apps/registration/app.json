@@ -18,17 +18,41 @@
         ],
         "config" : {
             "patientInformation": {
-                "additionalPatientInformation": {
-                    "title": "Additional Patient Information",
-                    "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
-                    ]
+                 "contactdetails":{
+                      "translationKey":"Contact Details",
+                      "title":"Contact Details",
+                      "attributes":["mobileNo","postaddres","email"
+                    ],"order" : 2
+                },
+	       "patientType":{
+                                "translationKey":"Type of Patient",
+                                "title":"Type of Patient",
+                                "attributes":["Patient Type"
+                                ],
+				"expanded": true,
+				"order" : 1
+               },
+               "contactdetails":{
+                                "translationKey":"Contact Details",
+                                "title":"Contact Details",
+                                "attributes":["email"
+                                ],
+				"expanded": true,
+				"order" : 1
+               },
+                "nextofkin":{
+                             	"translationKey":"Next Of Kin",
+                                "title":"Next of Kin",
+                                "attributes":["firstNextOfKinRelationship","firstNextOfKinName","firstNextOfKinPhone","firstNextOfKinOccupation","firstNextOfKinEmail","secondNextOfKinRelationship","secondNextOfKinName","secondNextOfKinPhone","secondNextOfKinOccupation","secondNextOfKinEmail"
+                                ],
+				"order" : 3
+               },
+
+                 "insuranceInformation":{
+                      "translationKey":"Insurance Information",
+                      "title":"Insurance Information",
+                      "attributes":["nhifRegistered","nhifNuber","insuranceInformation"
+                 ],"order" : 2
                 },
                 "hidden": {
                     "attributes": [
@@ -57,14 +81,11 @@
             "showLastName": true,
             "isLastNameMandatory": true,
             "showSaveConfirmDialog": false,
-            "showBirthTime": true,
+            "showBirthTime": false,
+            "showEnterID":false,
             "showCasteSameAsLastNameCheckbox": false,
+	    "mandatoryPersonAttributes" : ["Type of Patient"],
             "printOptions": [
-                {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
-                    "shortcutKey": "l"
-                },
                 {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
                     "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
@@ -103,15 +124,16 @@
             },
             "patientSearch": {
                 "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
+                    "label": "Location",
+                    "placeholder": "Enter Location",
                     "field": "address2"
                 },
                 "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
-                }
+			"label": "Patient ID Card No",
+    			"placeholder": "Enter Patient ID Card No",
+    			"fields": ["patientIDCardNo"]                   
+                },
+		  "searchByPatientIdentifier": true
             }
         }
 }

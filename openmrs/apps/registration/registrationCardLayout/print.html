@@ -1,128 +1,51 @@
-<link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/print.css"/>
-<table border="1" cellpadding="0" cellspacing="1" class="registrationCard-print-table">
-    <tbody>
-    <tr>
-        <td  class="print-table-left">
-            <table>
-                <tr>
+<!-- Custom Registration card layout -->
+<link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/print.css" />
+<div class="row" style="margin-bottom:20px;" >
+    <div class="logo">
+        <p>
+            <img src="/bahmni_config/openmrs/apps/registration/registrationCardLayout/images/cure2.jpg" style="width: 200px; height: 58px;margin-top: 20px ; padding-left:40px;" />
+        </p>
+    </div>
+    <div class="header-text" >
+        <p><b>CURE KENYA</b></p>
+        <p><b>AIC CURE INTERNATIONAL HOSPITAL</b></p>
+    </div>
+</div>
+<div class="row" style="margin-top:10px;" >
+    <div class="reg_number">
+        <p>Registration No. : <span>{{patient.primaryIdentifier.identifier}}</span> </p>
+    </div>
+</div>
 
-                    <td>
-                        <h3 class="print-table-header">Notice</h3>
-                        <ul class="print-table-left-body">
-                            <li>
-                                {{ "REGISTRATION_BRING_CARD_TEXT_KEY" | translate }}
-                            </li>
-                            <li>
-                                {{ "REGISTRATION_TAKE_MEDICINES_TEXT_KEY" | translate}}
-                            </li>
-                            <li>
-                                {{ "REGISTRATION_TIMINGS_TEXT_KEY" | translate }}
-                            </li>
-                            <li>
-                               {{ "REGISTRATION_OPD_DAYS_TEXT_KEY" | translate }}
-                            </li>
-                            <li>
-                                {{ "REGISTRATION_SUNDAYS_HOLIDAY_TEXT_KEY" | translate }}
-                            </li>
-                        </ul>
-                        <div class="caution">
-                            <h3 class="print-table-header">Caution</h3>
-                            <p>
-                                {{ "REGISTRATION_SMOKING_INJURIOUS_TEXT_KEY" | translate }}
-                            </p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td class="print-table-right" valign="top">
-            <table>
-                <tr>
-                    <td class="logo">
-                        <p>
-                            <img src="/bahmni_config/openmrs/apps/registration/registrationCardLayout/images/bahmni-icon.png" style="width: 12mm; height: 12mm; "/>
-                        </p>
-                    </td>
-                    <td class="print-table-right-header">
-                        <h3>
-                        {{ "REGISTRATION_INSTITUTE_NAME_TEXT_KEY" | translate }}
-                        </h3>
-                        <h3 class="print-center">{{ "REGISTRATION_INSTITUTE_REGISTERED_TEXT_KEY" |  translate }}</h3>
-                    </td>
-                    <td class="registrationCard-photo">
-                        <img ng-src="{{patient.image}}" style="width: 20mm; height: 20mm; "
-                             onerror="this.onerror=null;this.src='../images/blank.jpeg';"/>
-                    </td>
-                </tr>
-                <tr>
-                    <td colspan="3" class="print-center registrationCard-location">
-                    {{ "REGISTRATION_INSTITUTE_ADDRESS" | translate }}
-                    </td>
-                </tr>
-            </table>
-            <table class="registrationCard-details">
-                <tbody>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">Dated</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.registrationDate | bahmniDate}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">Registration</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.primaryIdentifier.identifier}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">Name</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>
-                        <span class="hindi-text">{{patient.fullNameLocal()}}</span>
-                    </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">Age</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.age | age}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">Gender</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.gender}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">Address</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.primaryRelative}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">Village</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.address.cityVillage}} </td>
-                </tr>
-                <tr>
-                    <td class="registrationCard-details-name">
-                        <span class="hindi-text">Tehsil</span>
-                    </td>
-                    <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.address.address3}} </td>
-                </tr>
-                </tbody>
-            </table>
-        </td>
-    </tr>
-    </tbody>
-</table>
+<div class="row">
+    <div class="reg_number">
+        <p>Reg Date: <span>{{today | date:'dd/MM/yyyy'}}</span> </p>
+    </div>
+</div>
+<div class="row">
+    <div class="reg_number">
+        <p>Name : <span class="hindi-text">{{patient.fullNameLocal()}}</span> </p>
+    </div>
+</div>
+<div class="row">
+    <div class="reg_number">
+        <p>Age : <span class="hindi-text">{{patient.age | age}}</span> </p>
+    </div>
+</div>
+<div class="row">
+    <div class="reg_number">
+        <p>Gender : <span class="hindi-text">{{ patient.gender }}</span> </p>
+    </div>
+</div>
+<div class="row">
+    <div class="reg_number">
+        <p>Address : <span>{{patient.address.address1}} </span> </p>
+    </div>
+</div>
+
+<div class="row">
+    <div class="reg_number">
+        <p>Clinic Location : <span class="hindi-text">{{patient.clinicLocation.value}}</span> </p>
+    </div>
+</div>
+

@@ -122,3 +122,13 @@ h1, h2, h3 {
 .hindi-text {
   vertical-align: bottom;
 }
+
+.header-text > {
+  text-align:cente;
+  font-size:16px;
+  vertical-align:middle;
+}
+
+.reg_number > p{
+  margin-left:50px;
+}

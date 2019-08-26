@@ -108,13 +108,19 @@
                 "conciseText": true
             },
             "Examination Notes": {
-                "conciseText": true
+                "conciseText": false
+            },
+	    "Complications Notes": {
+                "conciseText": false
             },
             "Set1": {
                 "allowAddMore": true
             },
             "Set2": {
                 "allowAddMore": true
+            },
+            "Seen By, Workshop" : {
+                "dropdown": true
             },
             "Coded3": {
                 "multiSelect": true

@@ -29,6 +29,16 @@
     "order": 3,
     "requiredPrivilege": "app:clinical"
   },
+  "bahmniPharmacy": {
+    "id": "bahmni.pharmacy",
+    "extensionPointId": "org.bahmni.home.dashboard",
+    "type": "link",
+    "label": "Pharmacy",
+    "url": "../clinical/#/default/patient/search",
+    "icon": "fa-stethoscope",
+    "order": 4,
+    "requiredPrivilege": "app:pharmacy"
+  },
   "adt": {
     "id": "bahmni.adt",
     "extensionPointId": "org.bahmni.home.dashboard",
@@ -150,5 +160,4 @@
     "order": 14,
     "requiredPrivilege": "app:appointments"
   }
-
 }

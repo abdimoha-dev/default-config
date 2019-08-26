@@ -3,6 +3,11 @@
         "translationKey":"DASHBOARD_TAB_GENERAL_KEY",
         "displayByDefault":true,
         "maxRecentlyViewedPatients":10,
+        "printing" : {
+                "title" : "CURE KENYA",
+                "header" : "Patient Summary",
+                "logo" : "../images/bahmniLogoFull.png"
+        },
         "sections":{  
             "patientInformation":{  
                 "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
@@ -40,7 +45,7 @@
                     "visitAttribute"
                 ]
             },
-	          "tuberculosis": {
+	    "tuberculosis": {
                 "title": "Tuberculosis Follow Up",
                 "type": "tuberculosis",
                 "isObservation": true,
@@ -48,15 +53,18 @@
                     "conceptNames": [
                         "Tuberculosis Followup Template"
                     ],
+		    "hideEmptyDisplayControl": true,
                     "numberOfVisits": 2
-                }
+                },
+                "hideEmptyDisplayControl": true
             },
             "disposition":{  
-                "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
+                "translationKey":"Plan",
                 "showDetailsButton":true,
                 "type":"disposition",
-                "numberOfVisits":1,
-                "displayOrder":7
+                "numberOfVisits":5,
+                "displayOrder":7,
+		"hideEmptyDisplayControl": true
             },
             "treatments":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
@@ -93,18 +101,6 @@
                 "type":"programs",
                 "displayOrder":10
             },
-            "radiologyOrders":{  
-                "orderType":"Radiology Order",
-                "type":"ordersControl",
-                "translationKey":"DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
-                "displayOrder":17,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Summary"
-                    ],
-                    "numberOfVisits":4
-                }
-            },
             "pacs":{  
                 "orderType":"Radiology Order",
                 "type":"pacsOrders",
@@ -113,42 +109,8 @@
                 "dashboardConfig":{  
                     "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
                     "numberOfVisits":4
-                }
-            },
-            "labOrdersDisplayControl":{  
-                "translationKey":"DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
-                "type":"ordersControl",
-                "orderType":"Lab Order",
-                "showDetailsButton":true,
-                "displayOrder":9,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ]
                 },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Systolic",
-                        "Diastolic",
-                        "Posture",
-                        "Temperature"
-                    ],
-                    "showDetailsButton":true
-                }
-            },
-            "bacteriologyResults":{  
-                "translationKey":"DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "type":"bacteriologyResultsControl",
-                "scope":"All",
-                "orderType":"",
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "BACTERIOLOGY CONCEPT SET"
-                    ]
-                }
+		"hideEmptyDisplayControl": true
             },
             "labResults":{  
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
@@ -181,7 +143,9 @@
                         "BMI Status Data"
                     ],
                     "showDetailsButton":true,
-                    "numberOfVisits":2
+                    "numberOfVisits":2,
+                    "hideEmptyDisplayControl": true
+
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
@@ -196,7 +160,8 @@
                     "pivotTable":{  
 
                     }
-                }
+                },
+                "hideEmptyDisplayControl": true
             },
             "vitals":{  
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
@@ -253,8 +218,32 @@
                     "pivotTable":{  
 
                     }
-                }
+                },
+                "hideEmptyDisplayControl": true
             },
+	    "consultationNotes":{
+    		"translationKey":"Consultation Notes",
+    		"type":"vitals",
+    		"isObservation":true,
+    		"displayOrder":8,
+    		"dashboardConfig":{
+        		"showDetailsButton":true,
+        		"conceptNames":[
+            			"Consultation Note"
+        		],
+        	"numberOfVisits":3
+    		},
+    		"expandedViewConfig":{
+        	"conceptNames":[
+            		"Consultation Note"
+        	],
+        	"numberOfVisits":3,
+        	"showDetailsButton":true,
+        	"pivotTable":{
+
+        	}
+    		}
+	    },
             "historyAndExaminations":{  
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "type":"vitals",
@@ -278,6 +267,115 @@
                     }
                 }
             },
+	   "rehabNotes":{
+                "translationKey":"Rehab Notes",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":7,
+                "dashboardConfig":{
+                        "showDetailsButton":true,
+                        "conceptNames":[
+                                "Rehab, Notes"
+                        ],
+                "numberOfVisits":2
+                },
+                "expandedViewConfig":{
+                "conceptNames":[
+                        "Rehab, Notes"
+                ],
+                "numberOfVisits":10,
+                "showDetailsButton":true,
+                "pivotTable":{
+
+                }
+                }
+            },
+	   "ptRecord":{
+                "translationKey":"Patient Treatment Record",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":8,
+                "dashboardConfig":{
+                        "showDetailsButton":true,
+                        "conceptNames":[
+                                "CCK, Patient Treatment Record"
+                        ],
+                "numberOfVisits":3
+                },
+                "expandedViewConfig":{
+                "conceptNames":[
+                        "CCK, Patient Treatment Record"
+                ],
+                "numberOfVisits":10,
+                "showDetailsButton":true,
+                "pivotTable":{
+
+                }
+                }
+            },
+           "nursesProcedure":{
+                "translationKey":"Nurses Procedure",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":9,
+                "dashboardConfig":{
+                        "showDetailsButton":true,
+                        "conceptNames":["Nurses Procedure Form"],
+                        "numberOfVisits":3
+                },
+                "expandedViewConfig":{
+                        "conceptNames":["Nurses Procedure Form"],
+                        "numberOfVisits":3,
+                        "showDetailsButton":true
+                }
+            },
+
+            "prosthesisWorkshop":{
+                "translationKey":"Prosthesis",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":8,
+                "dashboardConfig":{
+                        "showDetailsButton":true,
+                        "conceptNames":[
+                                "Prosthesis Form"
+                        ],
+                        "numberOfVisits":3
+                },
+                "expandedViewConfig":{
+                "conceptNames":[
+                        "Prosthesis Form"
+                ],
+                "numberOfVisits":3,
+                "showDetailsButton":true,
+                "pivotTable":{
+
+                        }
+                    }
+            },
+            "orthoticsWorkshop":{
+                "translationKey":"Orthotics",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":8,
+                "dashboardConfig":{
+                        "showDetailsButton":true,
+                        "conceptNames":[
+                                "Orthotics Form"
+                        ],
+                        "numberOfVisits":3
+                },
+                "expandedViewConfig":{
+                        "conceptNames":[
+                        "Orthotics Form"
+                        ],
+                        "numberOfVisits":3,
+                        "showDetailsButton":true,
+                        "pivotTable":{
+
+                        }
+                }
+            },
             "gynaecology":{  
                 "translationKey":"DASHBOARD_TITLE_GYNAECOLOGY_KEY",
                 "type":"gynaecology",
@@ -299,7 +397,8 @@
                     "pivotTable":{  
 
                     }
-                }
+                },
+                "hideEmptyDisplayControl": true
             },
             "obstetrics":{  
                 "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
@@ -322,7 +421,8 @@
                     "pivotTable":{  
 
                     }
-                }
+                },
+                "hideEmptyDisplayControl": true
             },
             "visits":{  
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
@@ -371,18 +471,15 @@
                             "Polymorph"
                         ]
                     }
-                }
+                },
+                "hideEmptyDisplayControl": true
             },
             "admissionDetails":{  
                 "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "type":"admissionDetails",
                 "displayOrder":19,
-                "showDetailsButton":true
-            },
-            "conditions": {
-                "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
-                "type": "conditionsList",
-                "displayOrder": 20
+                "showDetailsButton":true,
+                "hideEmptyDisplayControl": true
             },
             "formsDisplay": {
                 "type": "forms",
@@ -613,3 +710,4 @@
         }
     }
 }
+

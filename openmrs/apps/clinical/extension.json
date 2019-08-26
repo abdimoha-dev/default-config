@@ -19,7 +19,7 @@
     "translationKey":"DIAGNOSIS_BOARD_LABEL_KEY",
     "url": "diagnosis",
     "icon": "fa-user-md",
-    "order": 2,
+    "order": 3,
     "requiredPrivilege": "app:clinical:diagnosisTab"
   },
   "disposition": {
@@ -30,7 +30,7 @@
     "translationKey":"DISPOSITION_BOARD_LABEL_KEY",
     "url": "disposition",
     "icon": "fa-user-md",
-    "order": 3,
+    "order": 4,
     "requiredPrivilege": "app:clinical:dispositionTab"
   },
   "consultationSummary": {
@@ -41,7 +41,7 @@
     "translationKey":"CONSULTATION_BOARD_LABEL_KEY",
     "url": "consultation",
     "icon": "fa-user-md",
-    "order": 5,
+    "order": 2,
     "requiredPrivilege": "app:clinical:consultationTab"
   },
   "bahmniClinicalOrdersPending": {
@@ -54,6 +54,97 @@
     "order": 5,
     "requiredPrivilege": "app:radiologyOrders"
   },
+  "bahmniPharmacyPatientsSearchActivePatients": {
+    "id": "bahmni.pharmacy.patients.search.activePatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+        "searchHandler": "emrapi.sqlSearch.activePatientsForPharmacy",
+        "display": "Pharmacy Patients",
+        "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard/treatment?tabConfigName=allMedicationTabConfig"
+    },
+    "label": "Active Pharmacy Orders",
+    "order": 1,
+    "requiredPrivilege": "app:pharmacy"
+  },
+  "bahmniClinicalPatientsSearchAllVitalsTaken": {
+                "id": "bahmni.clinical.patients.search.vitalsTakenPatients",
+                "extensionPointId": "org.bahmni.patient.search",
+                "type": "config",
+                "extensionParams": {
+                        "searchHandler": "emrapi.sqlSearch.vitalsTaken",
+                        "translationKey": "VITALS TAKEN",
+                        "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+                },
+                "label": "VITALS TAKEN",
+                "order": 1,
+                "requiredPrivilege": "app:triageTaken"
+  },
+  "bahmniClinicalPatientsSearchAllActiveTriagePatients": {
+                "id": "bahmni.clinical.patients.search.allActiveTriagePatients",
+                "extensionPointId": "org.bahmni.patient.search",
+                "type": "config",
+                "extensionParams": {
+                        "searchHandler": "emrapi.sqlSearch.vitalsNotTaken",
+                        "translationKey": "VITALS NOT TAKEN",
+                        "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+                },
+                "label": "VITALS NOT TAKEN",
+                "order": 1,
+                "requiredPrivilege": "app:triage"
+  },
+  "bahmniClinicalPatientsSearchAllOrthoPatients": {
+        "id": "bahmni.clinical.patients.search.orthoPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+                "searchHandler": "emrapi.sqlSearch.activePatientsForOrtho",
+                "translationKey": "Orthopedic Patients",
+                "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+        },
+        "label": "Orthopedic Workshop",
+        "order": 1,
+        "requiredPrivilege": "app:workshop"
+  },
+  "bahmniClinicalPatientsSearchAllPTpatients": {
+        "id": "bahmni.clinical.patients.search.ptPatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+                "searchHandler": "emrapi.sqlSearch.activePatientsForPT",
+                "translationKey": "PT",
+                "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+        },
+        "label": "PT",
+        "order": 1,
+        "requiredPrivilege": "app:pt"
+  },
+  "bahmniClinicalPatientsSearchAwaitingConsultationPatients": {
+    "id": "bahmni.clinical.patients.search.allAwaitingConsultation",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.awaitingConsultation",
+      "translationKey": "Awaiting Consultation",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "Active",
+    "order": 1,
+    "requiredPrivilege": "app:awaitingConsultation"
+  },
+  "bahmniClinicalPatientsSearchAlreadySenPatients": {
+    "id": "bahmni.clinical.patients.search.alreadySeenPatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.alreadySeen",
+      "translationKey": "Already Seen",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "Active",
+    "order": 1,
+    "requiredPrivilege": "app:awaitingConsultation"
+  },
   "bahmniClinicalPatientsSearchAllActivePatients": {
     "id": "bahmni.clinical.patients.search.allActivePatients",
     "extensionPointId": "org.bahmni.patient.search",
@@ -65,8 +156,21 @@
     },
     "label": "Active",
     "order": 1,
-    "requiredPrivilege": "app:clinical"
+    "requiredPrivilege": "app:all"
   },
+  "bahmniPharmacyPatientsSearchActivePatients": {
+        "id": "bahmni.pharmacy.patients.search.activePatients",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.activePatientsForPharmacy",
+            "display": "Pharmacy Patients",
+            "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard/treatment?tabConfigName=allMedicationTabConfig"
+        },
+        "label": "Active Pharmacy Orders",
+        "order": 1,
+        "requiredPrivilege": "app:pharmacy"
+   },
   "bahmniClinicalPatientsSearchActivePatientsForPrograms": {
     "id": "bahmni.clinical.patients.search.activePatients",
     "extensionPointId": "org.bahmni.patient.search",
@@ -78,7 +182,7 @@
     },
     "label": "Active",
     "order": 1,
-    "requiredPrivilege": "app:clinical"
+    "requiredPrivilege": "app:programs"
   },
   "bahmniClinicalPatientsASearchActivePatientsByProvider": {
     "id": "bahmni.clinical.patients.search.activePatientsByProvider",
@@ -104,7 +208,7 @@
     },
     "label": "OPD-1",
     "order": 3,
-    "requiredPrivilege": "app:clinical"
+    "requiredPrivilege": "app:opd"
   },
   "activePatientsByLocation": {
     "id": "bahmni.clinical.patients.search.activePatientsByLocation",
@@ -117,7 +221,7 @@
     },
     "label": "Active",
     "order": 4,
-    "requiredPrivilege": "app:clinical"
+    "requiredPrivilege": "app:location"
   },
   "bahmniClinicalPatientsSearchAllPatients": {
     "id": "bahmni.clinical.patients.search.allPatients",
@@ -210,7 +314,7 @@
     },
     "url": "treatment",
     "icon": "fa-user-md",
-    "order": 7,
+    "order": 6,
     "requiredPrivilege": "app:clinical:treatmentTab"
   },
   "bahmniClinicalConsultationOrders": {
@@ -221,18 +325,7 @@
     "translationKey":"ORDERS_BOARD_LABEL_KEY",
     "url": "orders",
     "icon": "icon-user-md",
-    "order": 6,
+    "order": 5,
     "requiredPrivilege": "app:clinical:ordersTab"
-  },
-  "bahmniClinicalConsultationBacteriology": {
-    "id": "bahmni.clinical.consultation.bacteriology",
-    "extensionPointId": "org.bahmni.clinical.consultation.board",
-    "type": "link",
-    "label": "Bacteriology",
-    "translationKey":"BACTERIOLOGY_BOARD_LABEL_KEY",
-    "url": "bacteriology",
-    "icon": "icon-user-md",
-    "order": 7,
-    "requiredPrivilege": "app:clinical:bacteriologyTab"
   }
 }
