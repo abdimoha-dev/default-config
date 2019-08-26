@@ -30,7 +30,7 @@
                 "showCertainty":true,
                 "showOrder":true,
                 "showDetailsButton":true,
-                "displayOrder":1
+                "displayOrder":4
             },
             "navigationLinksControl":{  
                 "translationKey":"DASHBOARD_TITLE_NAVIGATION_LINKS_CONTROL_KEY",
@@ -69,7 +69,7 @@
             "treatments":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"treatment",
-                "displayOrder":4,
+                "displayOrder":5,
                 "dashboardConfig":{  
                     "showFlowSheet":true,
                     "showListView":true,
@@ -167,7 +167,7 @@
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":12,
+                "displayOrder":1,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
@@ -248,7 +248,7 @@
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":14,
+                "displayOrder":2,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
@@ -427,7 +427,7 @@
             "visits":{  
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":3,
+                "displayOrder":21,
                 "dashboardConfig":{  
                     "title":null,
                     "maximumNoOfVisits":8,
@@ -483,7 +483,7 @@
             },
             "formsDisplay": {
                 "type": "forms",
-                "displayOrder": 21,
+                "displayOrder": 3,
                 "dashboardConfig": {
                     "title": null,
                     "maximumNoOfVisits": 10
