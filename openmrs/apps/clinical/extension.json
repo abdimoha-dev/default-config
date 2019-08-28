@@ -132,6 +132,19 @@
     "order": 1,
     "requiredPrivilege": "app:awaitingConsultation"
   },
+  "bahmniClinicalPatientsSearchAwaitingConsultationPrivatePatients": {
+    "id": "bahmni.clinical.patients.search.allAwaitingConsultationPrivate",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.awaitingConsultationPrivate",
+      "translationKey": "Awaiting Consultation",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "Active",
+    "order": 1,
+    "requiredPrivilege": "app:awaitingConsultation_private"
+  },
   "bahmniClinicalPatientsSearchAlreadySenPatients": {
     "id": "bahmni.clinical.patients.search.alreadySeenPatients",
     "extensionPointId": "org.bahmni.patient.search",
@@ -145,6 +158,19 @@
     "order": 1,
     "requiredPrivilege": "app:awaitingConsultation"
   },
+  "bahmniClinicalPatientsSearchAlreadySenPatientsPrivate": {
+    "id": "bahmni.clinical.patients.search.alreadySeenPatientsPrivate",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.alreadySeenPrivate",
+      "translationKey": "Already Seen",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "Active",
+    "order": 1,
+    "requiredPrivilege": "app:awaitingConsultation_private"
+  },
   "bahmniClinicalPatientsSearchAllActivePatients": {
     "id": "bahmni.clinical.patients.search.allActivePatients",
     "extensionPointId": "org.bahmni.patient.search",
@@ -157,6 +183,19 @@
     "label": "Active",
     "order": 1,
     "requiredPrivilege": "app:all"
+  },
+  "bahmniClinicalPatientsSearchAllActivePatientsPrivate": {
+    "id": "bahmni.clinical.patients.search.allActivePatientsPrivate",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.activePatientsPrivate",
+      "translationKey": "MODULE_LABEL_ACTIVE_KEY",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "Active",
+    "order": 1,
+    "requiredPrivilege": "app:all_private"
   },
   "bahmniPharmacyPatientsSearchActivePatients": {
         "id": "bahmni.pharmacy.patients.search.activePatients",
