@@ -80,6 +80,19 @@
                 "order": 1,
                 "requiredPrivilege": "app:triageTaken"
   },
+  "bahmniClinicalPatientsSearchAllVitalsTakenPrivate": {
+    "id": "bahmni.clinical.patients.search.vitalsTakenPatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.vitalsTakenPrivate",
+      "translationKey": "VITALS TAKEN",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "VITALS TAKEN-Private",
+    "order": 1,
+    "requiredPrivilege": "app:triageTakenPrivate"
+  },
   "bahmniClinicalPatientsSearchAllActiveTriagePatients": {
                 "id": "bahmni.clinical.patients.search.allActiveTriagePatients",
                 "extensionPointId": "org.bahmni.patient.search",
@@ -92,6 +105,19 @@
                 "label": "VITALS NOT TAKEN",
                 "order": 1,
                 "requiredPrivilege": "app:triage"
+  },
+  "bahmniClinicalPatientsSearchAllActiveTriagePatientsPrivate": {
+    "id": "bahmni.clinical.patients.search.allActiveTriagePatientsPrivate",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.vitalsNotTakenPrivate",
+      "translationKey": "VITALS NOT TAKEN - PRIVATE",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "VITALS NOT TAKEN",
+    "order": 1,
+    "requiredPrivilege": "app:triagePrivate"
   },
   "bahmniClinicalPatientsSearchAllOrthoPatients": {
         "id": "bahmni.clinical.patients.search.orthoPatients",
