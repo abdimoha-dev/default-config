@@ -1,0 +1,23 @@
+table, th, td {
+	border: 1px solid black;
+	border-collapse: collapse;
+	height: 10px
+}
+th, td {
+	padding: 5px;
+	text-align: center;
+}
+.parent {
+	float: right;
+	width: 48%;
+	border-style: double;
+	border-width: 8px;
+}
+#table1 {
+	float: left;
+	width: 48%;
+}
+.dottedUnderline { 
+	border-bottom: 1px dotted; 
+	padding-left: 5px;
+}

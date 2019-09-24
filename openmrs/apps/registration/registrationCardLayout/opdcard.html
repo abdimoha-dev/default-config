@@ -1,0 +1,79 @@
+<!-- Custom Registration card layout -->
+<link rel="stylesheet" href="/bahmni_config/openmrs/apps/registration/registrationCardLayout/css/opd.css"/>
+
+<div>
+	<table id="table1">
+		<caption><h3>APPOINTMENT</h3></caption>
+		<tr>
+			<td>DATE</td>
+			<td>AGE</td>
+			<td>HIV STATUS</td>
+			<td>WEIGHT</td>
+			<td>RETURN DATE</td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+		<tr>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+			<td></td>
+		</tr>
+	</tr>
+	<tr>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+		<td></td>
+	</tr>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</tr>
+<tr>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+	<td></td>
+</tr>
+</table> 
+<div class="parent">
+    	<h3 style="text-align: center">SISTERS OF ST. JOSEPH OF TARBES<br>AMKA HEALTH PROJECT</h3>
+        <h5 style="text-align: center">P.O. BOX 21022-00505 NAIROBI<br>TEL: 020-355534/0722955521<br>Email: amkasjt@gmail.com</h5>
+        <p style="text-align: right; margin: 20px;">DATE  <span class="dottedUnderline"> {{today | date:'dd/MM/yyyy'}} </span></p>
+        <p style="text-align: left; margin: 20px;">NAME : <span class="dottedUnderline"> {{patient.fullNameLocal()}} </span> O.P. No. : <span class="dottedUnderline"> {{patient.primaryIdentifier.identifier}} </span></p>
+        <p style="text-align: left; margin: 20px;">RESIDENCE: <span class="dottedUnderline"> {{patient.address.cityVillage}} </span> AGE: <span class="dottedUnderline"> {{patient.age | age}} </span></p>
+       	<p style="text-align: left; margin: 20px;">ADDRESS:<span class="dottedUnderline"> {{patient.address.cityVillage}}  </span> TEL: <span class="dottedUnderline"> {{patient.phoneNumber}} </span></p>
+</div>
+
+</div>
+
