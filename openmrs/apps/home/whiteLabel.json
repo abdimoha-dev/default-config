@@ -1,15 +1,15 @@
 {
   "homePage": {
-    "header_text": "<b>WELCOME TO<br />BAHMNI EMR & HOSPITAL SERVICE",
-    "logo": "/bahmni/images/bahmniLogoFull.png",
+    "header_text": "<b>WELCOME TO<br />eHOSPITAL",
+    "logo": "/bahmni/images/eHospital.png",
     "title_text": " "
   },
   "loginPage": {
-    "logo": "/bahmni/images/bahmniLogoFull.png",
+    "logo": "/bahmni/images/eHospital.png",
     "showHeaderText": true,
     "showTitleText": false
   },
   "helpLink": {
-    "url": "https://bahmni.atlassian.net/wiki/display/BAH/Bahmni+Home"
+    "url": ""
   }
 }

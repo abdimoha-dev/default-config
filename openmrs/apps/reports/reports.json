@@ -1,4 +1,12 @@
 {
+    "visitCount": {
+        "name": "Visit Counts",
+        "type": "MRSGeneric",
+        "config": {
+             "forDataAnalysis": true,
+             "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/sql/visitCount.sql"
+             }
+    },
     "visitReport10": {
         "name": "Visit Report",
         "type": "visits",
@@ -536,68 +544,6 @@
             "showTotalRow":true,
             "showTotalColumn":true
 
-        }
-    },
-    "concatenatedReport": {
-        "name": "ConcatenatedReport",
-        "type": "concatenated",
-        "config": {
-            "reports": [
-                {
-                    "name": "Visit Report",
-                    "type": "visits",
-                    "config": {
-                        "forDataAnalysis": true,
-                        "patientAttributes": [
-                            "caste",
-                            "class",
-                            "education",
-                            "occupation",
-                            "primaryContact"
-                        ],
-                        "visitAttributes": [
-                            "Visit Status",
-                            "Admission Status"
-                        ],
-                        "patientAddresses": [
-                            "address3",
-                            "city_village"
-                        ],
-                        "applyDateRangeFor": "visitStopDate",
-                        "visitTypesToFilter": [
-                            "PHARMACY VISIT",
-                            "OPD"
-                        ]
-                    }
-                },
-                {
-                    "name": "Obs Canned Report",
-                    "type": "obsCannedReport",
-                    "config": {
-                        "patientAttributes": [
-                            "caste",
-                            "education"
-                        ],
-                        "applyDateRangeFor": "ObsRecording",
-                        "addressAttributes": [
-                            "postal_code",
-                            "city_village"
-                        ],
-                        "conceptNames": [
-                            "Pulse",
-                            "WEIGHT",
-                            "Vitals, Systolic",
-                            "Temperature"
-                        ],
-                        "visitIndependentConcept": [
-                            "HEIGHT",
-                            "Temperature"
-                        ],
-                        "enrolledProgram": "HIV Program",
-                        "showObsOnlyForProgramDuration": false
-                    }
-                }
-            ]
         }
     },
   "GenericLabOrderReport": {

@@ -19,10 +19,11 @@
         "config" : {
             "patientInformation": {
                 "additionalPatientInformation": {
-                    "title": "Additional Patient Information",
+                    "title": "Next of Kin",
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
+                        "primaryRelative",
+                        "relationship",
+                        "relativeContact",
                         "cluster",
                         "RationCard",
                         "familyIncome",
@@ -32,7 +33,8 @@
                 },
                 "hidden": {
                     "attributes": [
-                        "primaryContact"
+                        "primaryContact",
+                        "secondaryIdentifier"
                     ]
                 },
                 "defaults":  {
@@ -50,36 +52,24 @@
             },
 
             "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
+            "defaultIdentifierPrefix": "OPD",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
             "showMiddleName": true,
-            "showLastName": true,
-            "isLastNameMandatory": true,
-            "showSaveConfirmDialog": false,
-            "showBirthTime": true,
+            "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
-            "printOptions": [
-                {
-                    "translationKey": "REGISTRATION_PRINT_REG_CARD_LOCAL_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print_local.html",
-                    "shortcutKey": "l"
-                },
+            "disablePhotoCapture": true,
+	    "printOptions": [
                 {
                     "translationKey": "REGISTRATION_PRINT_REG_CARD_KEY",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/print.html",
+                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/opdcard.html",
                     "shortcutKey": "p"
                 },
                 {
                     "translationKey": "REGISTRATION_PRINT_SUPPLEMENTAL_PAPER",
                     "templateUrl": "/bahmni_config/openmrs/apps/registration/supplementalPaperLayout/print.html",
                     "shortcutKey": "r"
-                },
-                {
-                    "translationKey": "REGISTRATION_PRINT_WITH_BARCODE",
-                    "templateUrl": "/bahmni_config/openmrs/apps/registration/registrationCardLayout/printWithBarcode.html",
-                    "shortcutKey": "c"
-                }
+               }
             ],
             "conceptSetUI": {
                 "REGISTRATION FEES": {
@@ -99,19 +89,14 @@
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
-                "address1" : {"pattern" : "[a-zA-Z0-9\\s]{2,}", "errorMessage" : "Should contain at least 2 characters"}
+                "address1" : {"pattern" : "[a-zA-Z0-9]{3}", "errorMessage" : "Should contain 3 characters"}
             },
             "patientSearch": {
-                "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
-                },
-                "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
-                }
+              "address":{
+	      		"label": "Location",
+                    	"placeholder": "Enter location",
+			"field": "address2"
+		} 
             }
         }
 }

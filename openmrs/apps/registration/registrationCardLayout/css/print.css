@@ -6,7 +6,7 @@
 }
 
 /* line 10, print.scss */
-p, h1, h2, h3, table, tr, td, div, span, li {
+h1, h2, h3, table, tr, td, div, span, li {
   margin: 0px;
   padding: 0px;
 }
@@ -121,4 +121,12 @@ h1, h2, h3 {
 /* line 84, print.scss */
 .hindi-text {
   vertical-align: bottom;
+}
+.header-text > p {
+  text-align:center; 
+  font-size: 16px;
+  vertical-align: middle;
+}
+.reg_number > p{
+  margin-left: 50px;
 }

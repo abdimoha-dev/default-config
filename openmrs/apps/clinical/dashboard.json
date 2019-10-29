@@ -93,6 +93,18 @@
                 "type":"programs",
                 "displayOrder":10
             },
+            "dentalOrders":{
+                "orderType":"Dental Order",
+		"type":"ordersControl",
+		"translationKey":"Dental Orders",
+                "displayOrder":16,
+                "dashboardConfig":{
+                    "conceptNames":[
+                        "Summary"
+                    ],
+                    "numberOfVisits":4
+                }
+	    },
             "radiologyOrders":{  
                 "orderType":"Radiology Order",
                 "type":"ordersControl",
@@ -137,17 +149,6 @@
                         "Temperature"
                     ],
                     "showDetailsButton":true
-                }
-            },
-            "bacteriologyResults":{  
-                "translationKey":"DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
-                "type":"bacteriologyResultsControl",
-                "scope":"All",
-                "orderType":"",
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "BACTERIOLOGY CONCEPT SET"
-                    ]
                 }
             },
             "labResults":{  
@@ -270,29 +271,6 @@
                 "expandedViewConfig":{  
                     "conceptNames":[  
                         "History and Examination"
-                    ],
-                    "numberOfVisits":2,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            "gynaecology":{  
-                "translationKey":"DASHBOARD_TITLE_GYNAECOLOGY_KEY",
-                "type":"gynaecology",
-                "isObservation":true,
-                "displayOrder":15,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Gynaecology"
-                    ],
-                    "showDetailsButton":true,
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Gynaecology"
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,
