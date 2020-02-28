@@ -1,188 +1,174 @@
 {
-  "cureWeekly": {
-    "name": "Weekly Report",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/hmis/cure_activity.sql"
-    }
-   },
-   "hospitalActivities": {
-    "name": "Hospital Activities - Number of Clients Served (New and Total)",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/hmis/num_clients.sql"
-    }
-   },
-  "appontmentSummary": {
-    "name": "Appointments Summary Report",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/hmis/appointmentSummary.sql"
-    }
-   },
-  "missedAppontment": {
-    "name": "Missed Appointments Report",
-    "type": "MRSGeneric",
-    "config": {
-      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/hmis/missedAppointment.sql"
-    }
-   },
-    "visitReport10": {
-        "name": "Visit Report",
-        "type": "visits",
-        "config": {
-            "forDataAnalysis": true,
-            "patientAttributes": [
-                "caste",
-                "class",
-                "education",
-                "occupation",
-                "primaryContact"
-            ],
-            "visitAttributes": [
-                "Visit Status",
-                "Admission Status"
-            ],
-            "patientAddresses": [
-                "address3",
-                "city_village"
-            ],
-            "applyDateRangeFor": "visitStopDate",
-            "visitTypesToFilter": [
-                "PHARMACY VISIT",
-                "OPD"
-            ]
-        }
-    },
-    "chiefComplaintReport": {
-        "name": "Chief Complaint Report",
-        "type": "obsCount",
-        "config": {
-            "ageGroupName": "All Ages",
-            "conceptNames": [
-                "Chief Complaint"
-            ],
-            "countOnlyClosedVisits": "false",
-            "visitTypes": [
-                "IPD",
-                "OPD"
-            ]
-        }
-    },
-    "bloodPressure": {
-        "name": "Blood Pressure",
-        "type": "obsCount",
-        "config": {
-            "ageGroupName": "All Ages",
-            "conceptNames": [
-                "Systolic",
-                "Diastolic"
-            ],
-            "countOnlyClosedVisits": "false",
-            "countOncePerPatient": "false",
-            "visitTypes": [
-                "OPD",
-                "IPD"
-            ]
-        }
-    },
-    "vitalsTemplateReport": {
-        "name": "Vitals Template Report",
-        "type": "obsTemplate",
-        "config": {
-            "templateName": "Vitals",
-            "patientAttributes": [
-                "caste",
-                "education"
-            ],
-            "applyDateRangeFor": "encounterCreateDate"
-        }
-    },
-    "OPD/IPDVisitCount": {
-        "name": "OPD/IPD Visit Count",
-        "type": "IpdOpdVisitCount"
-    },
-    "visitReport": {
-        "name": "Visit Report",
-        "type": "visitReport",
-        "config": {
-            "personAttributes": [
-                "caste",
-                "class",
-                "education",
-                "occupation",
-                "primaryContact"
-            ],
-            "visitAttributes": [
-                "Visit Status"
-            ]
-        }
-    },
-    "patientReport": {
-        "name": "Patient Information",
-        "type": "PatientReport"
-    },
-    "pivotReportOfVisits": {
-        "name": "Aggregation report for visits",
-        "type": "aggregation",
-        "config": {
-            "report":{
-                "type": "visits",
-                "config": {
-                    "forDataAnalysis": true,
-                    "patientAttributes": [
-                        "caste",
-                        "class",
-                        "education",
-                        "occupation",
-                        "primaryContact"
-                    ],
-                    "visitAttributes": [
-                        "Visit Status",
-                        "Admission Status"
-                    ],
-                    "patientAddresses": [
-                        "address3",
-                        "city_village"
-                    ],
-                    "applyDateRangeFor": "visitStopDate",
-                    "visitTypesToFilter": [
-                        "PHARMACY VISIT",
-                        "OPD"
-                    ]
-                }
-            },
-            "rowGroups": [
-                "Gender"
-            ],
-            "columnGroups": [
-                "Visit Status"
-            ],
-            "distinctGroups": [
-                "Patient Identifier"
-            ]
-        }
-    },
-  "GenericLabOrderReportAggregation": {
-    "name": "Test Name vs Gender",
-    "type": "aggregation",
-    "config": {
-      "report": {
-        "type": "labOrders",
-        "config": {
-          "forDataAnalysis": true,
-          "showVisitInfo": true
-        }
+    "cureWeekly": {
+      "name": "Weekly Report",
+      "type": "MRSGeneric",
+      "config": {
+        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/hmis/cure_activity.sql"
+      }
+     },
+     "hospitalActivities": {
+      "name": "Hospital Activities - Number of Clients Served (New and Total)",
+      "type": "MRSGeneric",
+      "config": {
+        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/hmis/num_clients.sql"
+      }
+     },
+      "visitReport10": {
+          "name": "Visit Report",
+          "type": "visits",
+          "config": {
+              "forDataAnalysis": true,
+              "patientAttributes": [
+                  "caste",
+                  "class",
+                  "education",
+                  "occupation",
+                  "primaryContact"
+              ],
+              "visitAttributes": [
+                  "Visit Status",
+                  "Admission Status"
+              ],
+              "patientAddresses": [
+                  "address3",
+                  "city_village"
+              ],
+              "applyDateRangeFor": "visitStopDate",
+              "visitTypesToFilter": [
+                  "PHARMACY VISIT",
+                  "OPD"
+              ]
+          }
       },
-      "rowGroups": [
-        "Test Name"
-      ],
-      "columnGroups": [
-        "Gender"
-      ],
-      "distinctGroups": [
-        "Patient Identifier"
-      ]
+      "chiefComplaintReport": {
+          "name": "Chief Complaint Report",
+          "type": "obsCount",
+          "config": {
+              "ageGroupName": "All Ages",
+              "conceptNames": [
+                  "Chief Complaint"
+              ],
+              "countOnlyClosedVisits": "false",
+              "visitTypes": [
+                  "IPD",
+                  "OPD"
+              ]
+          }
+      },
+      "bloodPressure": {
+          "name": "Blood Pressure",
+          "type": "obsCount",
+          "config": {
+              "ageGroupName": "All Ages",
+              "conceptNames": [
+                  "Systolic",
+                  "Diastolic"
+              ],
+              "countOnlyClosedVisits": "false",
+              "countOncePerPatient": "false",
+              "visitTypes": [
+                  "OPD",
+                  "IPD"
+              ]
+          }
+      },
+      "vitalsTemplateReport": {
+          "name": "Vitals Template Report",
+          "type": "obsTemplate",
+          "config": {
+              "templateName": "Vitals",
+              "patientAttributes": [
+                  "caste",
+                  "education"
+              ],
+              "applyDateRangeFor": "encounterCreateDate"
+          }
+      },
+      "OPD/IPDVisitCount": {
+          "name": "OPD/IPD Visit Count",
+          "type": "IpdOpdVisitCount"
+      },
+      "visitReport": {
+          "name": "Visit Report",
+          "type": "visitReport",
+          "config": {
+              "personAttributes": [
+                  "caste",
+                  "class",
+                  "education",
+                  "occupation",
+                  "primaryContact"
+              ],
+              "visitAttributes": [
+                  "Visit Status"
+              ]
+          }
+      },
+      "patientReport": {
+          "name": "Patient Information",
+          "type": "PatientReport"
+      },
+      "pivotReportOfVisits": {
+          "name": "Aggregation report for visits",
+          "type": "aggregation",
+          "config": {
+              "report":{
+                  "type": "visits",
+                  "config": {
+                      "forDataAnalysis": true,
+                      "patientAttributes": [
+                          "caste",
+                          "class",
+                          "education",
+                          "occupation",
+                          "primaryContact"
+                      ],
+                      "visitAttributes": [
+                          "Visit Status",
+                          "Admission Status"
+                      ],
+                      "patientAddresses": [
+                          "address3",
+                          "city_village"
+                      ],
+                      "applyDateRangeFor": "visitStopDate",
+                      "visitTypesToFilter": [
+                          "PHARMACY VISIT",
+                          "OPD"
+                      ]
+                  }
+              },
+              "rowGroups": [
+                  "Gender"
+              ],
+              "columnGroups": [
+                  "Visit Status"
+              ],
+              "distinctGroups": [
+                  "Patient Identifier"
+              ]
+          }
+      },
+    "GenericLabOrderReportAggregation": {
+      "name": "Test Name vs Gender",
+      "type": "aggregation",
+      "config": {
+        "report": {
+          "type": "labOrders",
+          "config": {
+            "forDataAnalysis": true,
+            "showVisitInfo": true
+          }
+        },
+        "rowGroups": [
+          "Test Name"
+        ],
+        "columnGroups": [
+          "Gender"
+        ],
+        "distinctGroups": [
+          "Patient Identifier"
+        ]
+      }
     }
   }
-}

@@ -30,7 +30,7 @@
     "translationKey":"DISPOSITION_BOARD_LABEL_KEY",
     "url": "disposition",
     "icon": "fa-user-md",
-    "order": 6,
+    "order": 3,
     "requiredPrivilege": "app:clinical:dispositionTab"
   },
   "consultationSummary": {
@@ -41,7 +41,7 @@
     "translationKey":"CONSULTATION_BOARD_LABEL_KEY",
     "url": "consultation",
     "icon": "fa-user-md",
-    "order": 4,
+    "order": 5,
     "requiredPrivilege": "app:clinical:consultationTab"
   },
   "bahmniClinicalOrdersPending": {
@@ -210,7 +210,7 @@
     },
     "url": "treatment",
     "icon": "fa-user-md",
-    "order": 5,
+    "order": 7,
     "requiredPrivilege": "app:clinical:treatmentTab"
   },
   "bahmniClinicalConsultationOrders": {
@@ -221,7 +221,7 @@
     "translationKey":"ORDERS_BOARD_LABEL_KEY",
     "url": "orders",
     "icon": "icon-user-md",
-    "order": 3,
+    "order": 6,
     "requiredPrivilege": "app:clinical:ordersTab"
   },
   "bahmniClinicalConsultationBacteriology": {

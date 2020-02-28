@@ -40,7 +40,7 @@
                     "visitAttribute"
                 ]
             },
-	    "tuberculosis": {
+	          "tuberculosis": {
                 "title": "Tuberculosis Follow Up",
                 "type": "tuberculosis",
                 "isObservation": true,
@@ -48,18 +48,15 @@
                     "conceptNames": [
                         "Tuberculosis Followup Template"
                     ],
-		    "hideEmptyDisplayControl": true,
                     "numberOfVisits": 2
-                },
-                "hideEmptyDisplayControl": true
+                }
             },
             "disposition":{  
                 "translationKey":"DASHBOARD_TITLE_DISPOSITION_KEY",
                 "showDetailsButton":true,
                 "type":"disposition",
                 "numberOfVisits":1,
-                "displayOrder":7,
-		"hideEmptyDisplayControl": true
+                "displayOrder":7
             },
             "treatments":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
@@ -101,15 +98,12 @@
                 "type":"ordersControl",
                 "translationKey":"DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
                 "displayOrder":17,
-		"hideEmptyDisplayControl": true,
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "Summary"
                     ],
-                    "numberOfVisits":4,
-		    "hideEmptyDisplayControl": true
-                },
-                "hideEmptyDisplayControl": true
+                    "numberOfVisits":4
+                }
             },
             "pacs":{  
                 "orderType":"Radiology Order",
@@ -119,8 +113,7 @@
                 "dashboardConfig":{  
                     "pacsImageUrl":"/oviyam2/viewer.html?patientID={{patientID}}&accessionNumber={{orderNumber}}",
                     "numberOfVisits":4
-                },
-		"hideEmptyDisplayControl": true
+                }
             },
             "labOrdersDisplayControl":{  
                 "translationKey":"DASHBOARD_TITLE_LAB_ORDERS_DISPLAY_CONTROL_KEY",
@@ -144,8 +137,7 @@
                         "Temperature"
                     ],
                     "showDetailsButton":true
-                },
-                "hideEmptyDisplayControl": true
+                }
             },
             "bacteriologyResults":{  
                 "translationKey":"DASHBOARD_TITLE_BACTERIOLOGY_RESULTS_KEY",
@@ -156,8 +148,7 @@
                     "conceptNames":[  
                         "BACTERIOLOGY CONCEPT SET"
                     ]
-                },
-                "hideEmptyDisplayControl": true
+                }
             },
             "labResults":{  
                 "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
@@ -205,8 +196,7 @@
                     "pivotTable":{  
 
                     }
-                },
-                "hideEmptyDisplayControl": true
+                }
             },
             "vitals":{  
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
@@ -263,8 +253,7 @@
                     "pivotTable":{  
 
                     }
-                },
-                "hideEmptyDisplayControl": true
+                }
             },
             "historyAndExaminations":{  
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
@@ -310,8 +299,7 @@
                     "pivotTable":{  
 
                     }
-                },
-                "hideEmptyDisplayControl": true
+                }
             },
             "obstetrics":{  
                 "translationKey":"DASHBOARD_TITLE_OBSTETRICS_KEY",
@@ -334,8 +322,7 @@
                     "pivotTable":{  
 
                     }
-                },
-                "hideEmptyDisplayControl": true
+                }
             },
             "visits":{  
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
@@ -384,22 +371,18 @@
                             "Polymorph"
                         ]
                     }
-                },
-                "hideEmptyDisplayControl": true
+                }
             },
             "admissionDetails":{  
                 "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "type":"admissionDetails",
                 "displayOrder":19,
-                "showDetailsButton":true,
-                "hideEmptyDisplayControl": true
+                "showDetailsButton":true
             },
             "conditions": {
                 "translationKey":"CONDITION_LIST_DISPLAY_CONTROL_TITLE",
                 "type": "conditionsList",
-                "displayOrder": 20,
-                "hideEmptyDisplayControl": true,
-                "hideEmptyDisplayControl": true
+                "displayOrder": 20
             },
             "formsDisplay": {
                 "type": "forms",
