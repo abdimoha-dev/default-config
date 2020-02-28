@@ -109,17 +109,7 @@
     "icon": "fa-hospital-o",
     "order": 9,
     "requiredPrivilege": "app:ot"
-  },
-  "appointments": {
-    "id": "bahmni.appointments",
-    "extensionPointId": "org.bahmni.home.dashboard",
-    "type": "link",
-    "translationKey": "MODULE_LABEL_APOOINTMENTS_KEY",
-    "url": "../../openmrs/appointmentschedulingui/home.page",
-    "icon": "fa fa-calendar",
-    "order": 11,
-    "requiredPrivilege": "App: appointmentschedulingui.home"
-  },
+  }, 
   "implementerInterface": {
     "id": "bahmni.implementer.interface",
     "extensionPointId": "org.bahmni.home.dashboard",
@@ -149,15 +139,6 @@
     "icon": "fa fa-calendar",
     "order": 14,
     "requiredPrivilege": "app:appointments"
-  },
-  "AppointmentReport": {
-    "id": "referenceapplication.legacyRunICUReportLink",
-     "extensionPointId": "org.bahmni.home.dashboard",
-     "type": "link",
-     "label": "Run Appointment Report",
-     "url": "../../openmrs/module/reporting/run/runReport.form?reportId=b68ff902-e859-40ae-b42b-a66318b1a67d",	
-     "icon": "icon-print",
-     "order": 14,
-     "requiredPrivilege": "app:appointments"
   }
+
 }

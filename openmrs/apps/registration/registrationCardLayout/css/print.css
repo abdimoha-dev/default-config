@@ -1,5 +1,3 @@
-  GNU nano 2.0.9                                                                                                                                                                                        File: registrationCardLayout/css/print.css                                                                                                                                                                                                                                                                                                                                                                                       
-
 @page {
   margin-left: 0.2cm;
   margin-right: 0.2cm;
@@ -8,7 +6,7 @@
 }
 
 /* line 10, print.scss */
-h1, h2, h3, table, tr, td, div, span, li {
+p, h1, h2, h3, table, tr, td, div, span, li {
   margin: 0px;
   padding: 0px;
 }
@@ -124,13 +122,3 @@ h1, h2, h3 {
 .hindi-text {
   vertical-align: bottom;
 }
-.header-text > p {
-  text-align:center;
-  font-size: 16px;
-  vertical-align: middle;
-}
-.reg_number > p{
-  margin-left: 50px;
-}
-
-

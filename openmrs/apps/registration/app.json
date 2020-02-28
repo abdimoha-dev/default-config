@@ -18,39 +18,17 @@
         ],
         "config" : {
             "patientInformation": {
-               "additionalPatientInformation": {
+                "additionalPatientInformation": {
                     "title": "Additional Patient Information",
                     "attributes": [
+                        "distanceFromCenter",
+                        "isUrban",
+                        "cluster",
                         "RationCard",
                         "familyIncome",
                         "debt",
                         "cluster"
                     ]
-                },
-                 "contactdetails":{
-                      "translationKey":"Contact Details",
-                      "title":"Contact Details",
-                      "attributes":["mobileNo","postaddres","email"
-                    ],"order" : 1
-                },
-               "contactdetails":{
-                                "translationKey":"Contact Details",
-                                "title":"Contact Details",
-                                "attributes":["email"
-                                ],"order" : 1
-               },
-                "nextofkin":{
-                             	"translationKey":"Next Of Kin",
-                                "title":"Next of Kin",
-                                "attributes":["firstNextOfKinRelationship","firstNextOfKinName","firstNextOfKinPhone","firstNextOfKinOccupation","firstNextOfKinEmail","secondNextOfKinRelationship","secondNextOfKinName","secondNextOfKinPhone","secondNextOfKinOccupation","secondNextOfKinEmail"
-                                ],"order" : 1
-               },
-
-                 "insuranceInformation":{
-                      "translationKey":"Insurance Information",
-                      "title":"Insurance Information",
-                      "attributes":["nhifRegistered","nhifNuber","insuranceInformation"
-                 ],"order" : 1
                 },
                 "hidden": {
                     "attributes": [
@@ -79,8 +57,7 @@
             "showLastName": true,
             "isLastNameMandatory": true,
             "showSaveConfirmDialog": false,
-            "showBirthTime": false,
-            "showEnterID":false,
+            "showBirthTime": true,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
@@ -126,14 +103,14 @@
             },
             "patientSearch": {
                 "address": {
-                    "label": "Location",
-                    "placeholder": "Enter Location",
+                    "label": "Rural Ward",
+                    "placeholder": "Enter ward",
                     "field": "address2"
                 },
                 "customAttributes": {
-			"label": "Patient ID Card No",
-    			"placeholder": "Enter Patient ID Card No",
-    			"fields": ["patientIDCardNo"]                   
+                    "label": "रुग्णाचे नाव",
+                    "placeholder": "रुग्णाचे नाव",
+                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
                 }
             }
         }
