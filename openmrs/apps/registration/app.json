@@ -21,15 +21,30 @@
                 "additionalPatientInformation": {
                     "title": "Additional Patient Information",
                     "attributes": [
-                        "distanceFromCenter",
-                        "isUrban",
-                        "cluster",
-                        "RationCard",
-                        "familyIncome",
-                        "debt",
-                        "cluster"
+                        "distanceFromCenter"
+                            
                     ]
                 },
+                    "patientAddress": {
+                        "title": "Patient Address",
+                        "attributes": [
+                            "Allergies?",
+                            "knownAllergens",
+                            "typesofAllergicReactions",
+                            "mainRisk(s)",
+                            "severityofRisk",
+                            "additionalRiskDetails",
+                            "overallIntensityofCare",
+                            "outstandingItem(s)1",
+                            "outstandingItem(s)2",
+                            "outstandingItem(s)3",
+                            "outstandingItem(s)4",
+                            "otherOutstandingItem(s)",
+                            "currentManagementPlan/Message:"
+                        ],
+                        "expand": true,
+                        "order": 2
+                    },
                 "hidden": {
                     "attributes": [
                         "primaryContact"
@@ -57,7 +72,7 @@
             "showLastName": true,
             "isLastNameMandatory": true,
             "showSaveConfirmDialog": false,
-            "showBirthTime": true,
+            "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
@@ -103,14 +118,9 @@
             },
             "patientSearch": {
                 "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
-                },
-                "customAttributes": {
-                    "label": "रुग्णाचे नाव",
-                    "placeholder": "रुग्णाचे नाव",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                    "label": "Patient's Address",
+                    "placeholder": "Enter Address",
+                    "field": "address1"
                 }
             }
         }
