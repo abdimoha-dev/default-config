@@ -59,13 +59,13 @@
                     "visitAttribute"
                 ]
             },
-	          "tuberculosis": {
-                "title": "Tuberculosis Follow Up",
+	          "financialinformation": {
+                "title": "Financial Info",
                 "type": "tuberculosis",
                 "isObservation": true,
                 "dashboardConfig": {
                     "conceptNames": [
-                        "Tuberculosis Followup Template"
+                        "Fee Information"
                     ],
                     "numberOfVisits": 2
                 }
@@ -282,7 +282,21 @@
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
-                        "Mental Health - Mental State Examination"
+                        "Mental Health - Mental State Examination",
+                        "Mental Health, Follow-up Assessment",
+                        "Mental Health, Risk Assessment",
+                        "Mental Health,Care Plan",
+                        "Seizure Disorder, Progress",
+                        "Ward Review",
+                        "Forwarded Results",
+                        "Grand Ward Round",
+                        "Ad-hoc Updates",
+                        "Ad-hoc Calls And Actions",
+                        "Serious Incident Report",
+                        "EEG Notes"
+
+
+
                     ],
                     "numberOfVisits":2
                 },
