@@ -10,6 +10,25 @@
                 "displayOrder":0,
                 "ageLimit":100,
                 "patientAttributes":[  
+                    "Allergies?",
+                    "knownAllergens",
+                    "typesofAllergicReactions",
+                    "legalstatus",
+                    "paymentCategory",
+                    "accountStatus",
+                    "primaryContact(MTN/WhatsApp)",
+                    "mainRisk(s)",
+                    "severityofRisk",
+                    "additionalRiskDetails",
+                    "principalCarer",
+                    "principalCarerContact(s)",
+                    "outstandingItem(s)1",
+                    "outstandingItem(s)2",
+                    "outstandingItem(s)3",
+                    "outstandingItem(s)4",
+                    "otherOutstandingItem(s)",
+                    "currentManagementPlan/Message:"
+
 
                 ],
                 "addressFields":[  
@@ -263,13 +282,13 @@
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
-                        "History and Examination"
+                        "Mental Health - Mental State Examination"
                     ],
                     "numberOfVisits":2
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
-                        "History and Examination"
+                        "Mental Health - Mental State Examination"
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,
@@ -412,7 +431,7 @@
                 "translationKey":"DASHBOARD_TITLE_PATIENT_INFORMATION_KEY",
                 "type":"patientInformation",
                 "patientAttributes":[  
-                    "caste",
+                    "education_Status",
                     "class",
                     "education",
                     "occupation",
