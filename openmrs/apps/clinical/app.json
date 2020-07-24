@@ -128,6 +128,81 @@
             "Accepted Family Planning methods": {
                 "multiSelect": true
             },
+            "Presenting complaints": {
+                "multiSelect": true
+            },
+            "Trigger factors/history of presenting complaints": {
+                "multiSelect": true
+            },
+            "Previous/ongoing psychiatric problems": {
+                "multiSelect": true
+            },
+            "Current social circumstances": {
+                "multiSelect": true
+            },
+            "Previous/Ongoing medical problems": {
+                "multiSelect": true
+            },           
+            "Significant family psychiatric history": {
+                "multiSelect": true
+            },
+            "Personal History, infancy - perinatal problems": {
+                "multiSelect": true
+            },
+            "Personal History: childhood family circumstances": {
+                "multiSelect": true
+            },
+            "Personal history: adolescence early adulthood": {
+                "multiSelect": true
+            },
+            "Personal History, Relationships": {
+                "multiSelect": true
+            },
+            "Drug and alcohol history": {
+                "multiSelect": true
+            },
+            "Appearance and behaviour": {
+                "multiSelect": true
+            },
+            "Abnormalities of mood": {
+                "multiSelect": true
+            },
+            "Abnormalities of Speech": {
+                "multiSelect": true
+            },
+            "Abnormalities of perception": {
+                "multiSelect": true
+            },
+            "Abnormalities of form (flow) of thought": {
+                "multiSelect": true
+            },
+            "Abnormalities of content of thought": {
+                "multiSelect": true
+            },
+            "General symptoms and signs" : {
+                "multiSelect": true
+            },
+            "Cardiovascular symptoms and signs" : {
+                "multiSelect": true
+            },
+            "Respiratory symptoms and signs" : {
+                "multiSelect": true
+            },
+            "Gastrointestinal symptoms and signs" : {
+                "multiSelect": true
+            },
+            "Genito-urinary and urological symptoms and signs" : {
+                "multiSelect": true
+            },
+            "Gynaecological and Obstetric symptoms and signs" : {
+                "multiSelect": true
+            },
+            "Musculoskeletal symptoms and signs" : {
+                "multiSelect": true
+            },
+            "Neurological symptoms and signs" : {
+                "multiSelect": true
+            },
             "defaults": {
                 "Number of living children": 1,
                 "Accepted Family Planning methods": [
