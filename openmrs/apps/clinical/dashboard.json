@@ -282,27 +282,17 @@
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
-                        "Mental Health - Mental State Examination",
-                        "Mental Health, Follow-up Assessment",
-                        "Mental Health, Risk Assessment",
-                        "Mental Health,Care Plan",
-                        "Seizure Disorder, Progress",
-                        "Ward Review",
-                        "Forwarded Results",
-                        "Grand Ward Round",
-                        "Ad-hoc Updates",
-                        "Ad-hoc Calls And Actions",
-                        "Serious Incident Report",
-                        "EEG Notes"
-
-
-
+                        "Additional Medical History And Examination",
+                        "VTE Assessment",
+                        "Forwarded Results"
                     ],
-                    "numberOfVisits":2
+                    "numberOfVisits":3
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
-                        "Mental Health - Mental State Examination"
+                        "Additional Medical History And Examination",
+                        "VTE Assessment",
+                        "Forwarded Results"
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,
@@ -342,13 +332,25 @@
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
-                        "Obstetrics"
+                        "Initial Psychiatric History",
+                        "Mental State Examination Form",
+                        "Adhoc Calls And Actions Form",
+                        "Adhoc Updates Form",
+                        "Follow up Assessment",
+                        "Mental Health Care Plan",
+                        "Serious incident Report"
                     ],
                     "numberOfVisits":2
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
-                        "Obstetrics"
+                        "Initial Psychiatric History",
+                        "Mental State Examination Form",
+                        "Adhoc Calls And Actions Form",
+                        "Adhoc Updates Form",
+                        "Follow up Assessment",
+                        "Mental Health Care Plan",
+                        "Serious incident Report"
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,
