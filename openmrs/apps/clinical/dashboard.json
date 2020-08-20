@@ -284,7 +284,10 @@
                     "conceptNames":[  
                         "Additional Medical History And Examination",
                         "VTE Assessment",
-                        "Forwarded Results"
+                        "Forwarded Results",
+                        "Adhoc Updates(Medical)",
+                        "Adhoc Calls And Actions(Medical)",
+                        "Follow up Assessment(Medical)"
                     ],
                     "numberOfVisits":3
                 },
@@ -292,7 +295,10 @@
                     "conceptNames":[  
                         "Additional Medical History And Examination",
                         "VTE Assessment",
-                        "Forwarded Results"
+                        "Forwarded Results",
+                        "Adhoc Updates(Medical)",
+                        "Adhoc Calls And Actions(Medical)",
+                        "Follow up Assessment(Medical)"
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,
@@ -308,14 +314,14 @@
                 "displayOrder":15,
                 "dashboardConfig":{  
                     "conceptNames":[  
-                        "Mental Health Risk Assessment Form"
+                        "Mental Health Risk Assessment "
                     ],
                     "showDetailsButton":true,
                     "numberOfVisits":2
                 },
                 "expandedViewConfig":{  
                     "conceptNames":[  
-                        "Mental Health Risk Assessment Form"
+                        "Mental Health Risk Assessment "
                     ],
                     "numberOfVisits":2,
                     "showDetailsButton":true,
@@ -333,10 +339,10 @@
                     "showDetailsButton":true,
                     "conceptNames":[  
                         "Initial Psychiatric History",
-                        "Mental State Examination Form",
-                        "Adhoc Calls And Actions Form",
-                        "Adhoc Updates Form",
-                        "Follow up Assessment",
+                        "Mental State Examination",                      
+                        "Adhoc Updates(Psychiatry)",
+                        "Adhoc Calls And Actions(Psychiatry)",            
+                        "Follow up Assessment(Psychiatry)",
                         "Mental Health Care Plan",
                         "Serious incident Report"
                     ],
@@ -345,10 +351,10 @@
                 "expandedViewConfig":{  
                     "conceptNames":[  
                         "Initial Psychiatric History",
-                        "Mental State Examination Form",
-                        "Adhoc Calls And Actions Form",
-                        "Adhoc Updates Form",
-                        "Follow up Assessment",
+                        "Mental State Examination",                      
+                        "Adhoc Updates(Psychiatry)",
+                        "Adhoc Calls And Actions(Psychiatry)",            
+                        "Follow up Assessment(Psychiatry)",
                         "Mental Health Care Plan",
                         "Serious incident Report"
                     ],
