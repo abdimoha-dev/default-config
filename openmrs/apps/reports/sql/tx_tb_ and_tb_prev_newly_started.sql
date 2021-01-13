@@ -1,6 +1,7 @@
 select 'less than 15 Years' as 'Age Group' ,sex,
 count(distinct(case when pid is not null and age < 15 and sex in ('F', 'M') then pid end)) as 'Newly started on ART',
-count(distinct(case when tbscreeningCurrentCough is not null or tbscreeningfever is not null or tbscreeningweightloss is not null or tbscreeningNightsweats is not null and age < 15 and sex in ('F', 'M') then pid end)) as 'Screened for TB symptoms',
+count(distinct(case when (tbscreeningCurrentCough is not null or tbscreeningfever is not null or tbscreeningweightloss is not null or tbscreeningNightsweats is not null) 
+and age < 15 and sex in ('F', 'M') then pid end)) as 'Screened for TB symptoms',
 count(distinct(case when tbscreeningCurrentCough = 1 and tbscreeningfever  = 1 and tbscreeningweightloss = 1 and tbscreeningNightsweats = 1 and age < 15 and sex in ('F', 'M') then pid end)) as 'TB Suspect/Presumptive TB',
 count(distinct(case when afbMicroscropicdateresultreceived is not null and age < 15 and sex in ('F', 'M') then pid end)) as 'Specimen Sent to Lab - AFB Microscopy',
 count(distinct(case when geneXpertdateresultreceived is not null and age < 15 and sex in ('F', 'M') then pid end)) as 'Specimen Sent to Lab - GeneXpert',
@@ -131,10 +132,14 @@ and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT((
 (select concept_id from concept_name where name = 'IPT Status - TB Screening' and concept_name_type = 'FULLY_SPECIFIED' and voided = 0) and obs_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(('#endDate#'),'%Y-%m-%d 23:59:59') group by pid) c on 
 a.person_id = c.pid and a.encounter_id = c.maxdate 
 )tIptCompleted on tArvsReceivedBefore.person_id = tIptCompleted.person_id  group by sex
+
+
+
+
 union all
 select '15 Years And Above' as 'Age Group' ,sex,
 count(distinct(case when pid is not null and age >= 15 then pid end)) as 'Newly started on ART',
-count(distinct(case when tbscreeningCurrentCough is not null or tbscreeningfever is not null or tbscreeningweightloss is not null or tbscreeningNightsweats is not null and age >= 15 then pid end)) as 'Screened for TB symptoms',
+count(distinct(case when (tbscreeningCurrentCough is not null or tbscreeningfever is not null or tbscreeningweightloss is not null or tbscreeningNightsweats is not null)and age >= 15 then pid end)) as 'Screened for TB symptoms',
 count(distinct(case when tbscreeningCurrentCough = 1 and tbscreeningfever  = 1 and tbscreeningweightloss = 1 and tbscreeningNightsweats = 1 and age >= 15 then pid end)) as 'TB Suspect/Presumptive TB',
 count(distinct(case when afbMicroscropicdateresultreceived is not null and age >= 15 then pid end)) as 'Specimen Sent to Lab - AFB Microscopy',
 count(distinct(case when geneXpertdateresultreceived is not null and age >= 15 then pid end)) as 'Specimen Sent to Lab - GeneXpert',
