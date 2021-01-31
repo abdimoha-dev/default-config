@@ -289,6 +289,9 @@ inner join concept_name cn on o.concept_id = cn.concept_id
 where cn.name in  ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
 '1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') and cn.concept_name_type = 'Fully_specified' and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and concept_name_type = 'Fully_specified')
 group by o.patient_id having count(o.patient_id) = 1) pp
+
+
+
 union all
 select 'On Alternate 1st Line Regimen (Substituted)',
 @alternate1 := (case when mindate between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#startDate#'),'%Y-%m-%d 23:59:59') then count(distinct(patient_id)) else 0 end) as 'start',
@@ -305,6 +308,8 @@ inner join concept_name cn on o.concept_id = cn.concept_id
 where cn.name in  ('1a = AZT/3TC+EFV' , '1b = AZT/3TC/NVP', '1c = TDF/3TC/DTG','1d=ABC/3TC (600/300)/DTG',
 '1e = AZT/3TC +DTG','1f = TDF/3TC+EFV','1g = TDF/3TC+NVP', '1h = TDF/FTC/EFV') and cn.concept_name_type = 'Fully_specified' and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and concept_name_type = 'Fully_specified')
 group by o.patient_id having count(o.patient_id) > 1) tAltenateFirstLine
+
+
 union all 
 select 'On 2nd Line Regimen (Switched)',
 @switched1 := (case when mindate between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#startDate#'),'%Y-%m-%d 23:59:59') then count(distinct(patient_id)) else 0 end) as 'start',
@@ -322,6 +327,9 @@ where cn.name in  ('2a=AZT/3TC+DTG' , '2b=ABC/3TC+DTG', '2c=TDF+3TC+LPV/r','2d=T
 '2e=TDF/FTC-LPV/r','2f=TDF/FTC-ATV/r','2g=AZT/3TC+LPV/r', '2h=AZT/3TC+ATV/r','2i=ABC/3TC+LPV/r','2j=ABC/3TC+ATV/r','2k=TDF/3TC/DTG') and cn.concept_name_type = 'Fully_specified' and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' and concept_name_type = 'Fully_specified')
 group by o.patient_id having count(o.patient_id) > 0) tSecondSubstitutedLine
 )tefg limit 1
+
+
+
 union all
 select 
 @initial1 := (case when startdate between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#startDate#'),'%Y-%m-%d 23:59:59') then count(distinct(patient_id)) else 0 end) as 'start',
@@ -340,6 +348,8 @@ left join person p on pa.person_id = p.person_id
 where dr.dosage_form = (select concept_id from concept_name where uuid = '95955de4-7440-4482-88f6-e5daefc2d738') and pa.person_attribute_type_id = 33 and
 pa.value not in (SELECT concept_id FROM openmrs.concept_name where name = 'Transfer-in'  and concept_name_type = 'FULLY_SPECIFIED')
 group by o.patient_id ) patients
+
+
 union all
 select
 @tranferIn1 := (case when startdate between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#startDate#'),'%Y-%m-%d 23:59:59') then count(distinct(patient_id)) else 0 end) as 'start',
@@ -358,6 +368,7 @@ left join person p on pa.person_id = p.person_id
 where dr.dosage_form = (select concept_id from concept_name where uuid = '95955de4-7440-4482-88f6-e5daefc2d738') and pa.person_attribute_type_id = 33 and
 pa.value = (SELECT concept_id FROM openmrs.concept_name where name = 'Transfer-in'  and concept_name_type = 'FULLY_SPECIFIED')
 group by o.patient_id ) patients 
+
 union all
 select 
 @transferOut1 := (case when value_datetime between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#startDate#'),'%Y-%m-%d 23:59:59') then count(distinct(patient_id)) else 0 end) as 'start',
@@ -378,49 +389,10 @@ and obs.concept_id = (select concept_id from concept_name where name = 'Transfer
 and obs.status = 'FINAL') group by o.patient_id
 )tTransferOutlimit limit 1
 ) hh
-union all
-select 'Fraction CD4 <200 (of adults with available CD4 at baseline)', CEIL(@baselineStart / @baseStart ) as 'start', CEIL(@baseline6 / @base6) as '6mo', CEIL(@baseline12 / @base12 ) as '12mo', CEIL(@baseline24 / @base24 ) as '24mo', CEIL(@baseline36 / @base36 ) as '36mo', 
-CEIL(@baseline48 / @base48 ) as '48mo', CEIL(@baseline60 / @base60 ) as '60mo'  from (
-select 'Fraction CD4 <200 (of adults with available CD4 at baseline)',
-@baselineStart := (case when mindate between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#startDate#'),'%Y-%m-%d 23:59:59') then count(distinct(patient_id)) else 0 end) as 'start',
-@baseline6 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 6 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 6 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '6mo',
-@baseline12 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 12 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 12 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '12mo',
-@baseline24 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 24 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 24 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '24mo',
-@baseline36 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 36 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 36 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '36mo',
-@baseline48 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 48 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 48 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '48mo',
-@baseline60 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 60 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 60 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '60mo'
- from (
-select o.patient_id, o.concept_id  , dr.dosage_form , min(o.date_created) as 'mindate' from orders  o
-left join drug dr on o.concept_id = dr.concept_id
-inner join concept_name cn on o.concept_id = cn.concept_id
-left join obs ob on o.patient_id = ob.person_id
-left join person pa on ob.person_id = pa.person_id
-where cn.concept_name_type = 'Fully_specified' and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' 
-and concept_name_type = 'Fully_specified')
-and ob.concept_id = (select concept_id from concept_name where name = 'CD4' and concept_name_type = 'Fully_specified') 
-and ob.value_numeric < 200 and TIMESTAMPDIFF(YEAR,pa.birthdate,NOW()) >= 18
-group by o.patient_id having count(o.patient_id) > 0) tb2
-union all
-select 'Fraction CD4 <200 (of adults with available CD4 at baseline)',
-@baseStart := (case when mindate between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#startDate#'),'%Y-%m-%d 23:59:59') then count(distinct(patient_id)) else 0 end) as 'start',
-@base6 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 6 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 6 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '6mo',
-@base12 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 12 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 12 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '12mo',
-@base24 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 24 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 24 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '24mo',
-@base36 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 36 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 36 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '36mo',
-@base48 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 48 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 48 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '48mo',
-@base60 := SUM(CASE WHEN mindate between DATE_FORMAT('#startDate#' - INTERVAL 60 MONTH ,'%Y-%m-01') and (DATE_FORMAT(LAST_DAY('#startDate#' - INTERVAL 60 MONTH),'%Y-%m-%d 23:59:59')) then 1 else 0 end) as '60mo'
-from (
-select o.patient_id, o.concept_id  , dr.dosage_form , min(o.date_created) as 'mindate' from orders  o
-left join drug dr on o.concept_id = dr.concept_id
-inner join concept_name cn on o.concept_id = cn.concept_id
-left join obs ob on o.patient_id = ob.person_id
-left join person pa on ob.person_id = pa.person_id
-where cn.concept_name_type = 'Fully_specified' and dr.dosage_form = (select concept_id from concept_name where name = 'HIVTC, ART Regimen' 
-and concept_name_type = 'Fully_specified')
-and ob.concept_id = (select concept_id from concept_name where name = 'CD4' and concept_name_type = 'Fully_specified') 
-and ob.value_numeric > 0 and TIMESTAMPDIFF(YEAR,pa.birthdate,NOW()) >= 18
-group by o.patient_id having count(o.patient_id) > 0) tb1
-)tcd4lessthan200 LIMIT 1
+
+
+
+
 union all
 select 'Done Viral Load (VL)',
 (case when mindate between DATE_FORMAT('#startDate#','%Y-%m-01') and DATE_FORMAT(LAST_DAY('#startDate#'),'%Y-%m-%d 23:59:59') then count(distinct(patient_id)) else 0 end) as 'start',
